@@ -2,7 +2,8 @@
 project ("rocket_game" VERSION 0.0.1 LANGUAGES CXX)
 
 set(GAME_SOURCES
-    src/main.cpp)
+    src/main.cpp
+    src/widgets/statistics.cpp)
 
 set(SFML_STATIC_LIBRARIES TRUE)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

@@ -3,6 +3,9 @@
 #include <reactphysics3d/reactphysics3d.h>
 #include <imgui.h>
 #include <imgui-SFML.h>
+
+#include "widgets/statistics.hpp"
+
 using namespace std;
 using namespace sf;
 using namespace reactphysics3d;
@@ -39,10 +42,7 @@ int main(void){
         deltaTime = deltaClock.restart();
         ImGui::SFML::Update(window, deltaTime);
 
-        ImGui::Begin("Hello, world!");
-        if(ImGui::Button("Look at this pretty button"))
-            cout << "Button test\n";
-        ImGui::End();
+        Widgets::drawRenderStats(deltaTime);
 
         window.clear();
         ImGui::SFML::Render(window);
