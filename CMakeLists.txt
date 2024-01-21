@@ -43,6 +43,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE src/)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${SFML_LIBS} ImGui-SFML::ImGui-SFML EnTT::EnTT box2d ReactPhysics3D::reactphysics3d -static)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    target_link_options(${PROJECT_NAME} PRIVATE "-mwindows")
+endif()
+
 if(WIN32)
     add_custom_command(
         TARGET ${PROJECT_NAME}

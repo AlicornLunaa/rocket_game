@@ -14,7 +14,7 @@ int main(void){
     PhysicsCommon physCommon;
     PhysicsWorld* world = physCommon.createPhysicsWorld();
 
-    RenderWindow window(VideoMode(640, 480), "Hello World!");
+    RenderWindow window(VideoMode(1280, 720), "Hello World!");
     Clock deltaClock;
     Time deltaTime;
     
@@ -43,6 +43,8 @@ int main(void){
         ImGui::SFML::Update(window, deltaTime);
 
         Widgets::drawRenderStats(deltaTime);
+
+        world->update(1.f / 60.f);
 
         window.clear();
         ImGui::SFML::Render(window);
